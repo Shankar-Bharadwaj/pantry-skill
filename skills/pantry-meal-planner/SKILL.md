@@ -1,7 +1,7 @@
 ---
 name: pantry-meal-planner
-description: Plan 5 days of dinners that use up expiring pantry/fridge items first, respecting dietary rules, and produce a grocery list grouped by store aisle. Use when the user asks for a meal plan, what to cook, how to use up food before it expires, or a grocery/shopping list.
-version: 1.0.0
+description: Plan 5 days of dinners that use up expiring pantry/fridge items first, respecting dietary rules, and produce a grocery list grouped by store aisle; also keeps the pantry list up to date. Use when the user asks for a meal plan, what to cook, recipes from what they have, how to use up food before it expires, a grocery/shopping list, or says they bought, used or threw away food.
+version: 1.1.0
 author: Shankar Bharadwaj (CSCI 599, USC)
 metadata:
   hermes:
@@ -17,6 +17,9 @@ Turns "what's in my fridge + my diet rules" into a 5-day dinner plan that **uses
 - "Make me a meal plan", "what should I cook this week", "use up what's in my fridge"
 - "What groceries do I need?" after a plan
 - A briefing asks which pantry items expire soon
+
+## Quick asks (single recipe)
+"What can I cook tonight?" / "Give me a recipe with tofu" → same lookup as step 2 below, but return **one** recipe that uses the earliest-expiring items, with ingredients (marking which are already in the pantry) and short steps (from TheMealDB `strInstructions`, condensed).
 
 ## Inputs
 1. **Pantry list** — in priority order:
@@ -41,6 +44,14 @@ Turns "what's in my fridge + my diet rules" into a 5-day dinner plan that **uses
    - **Day 1–5**: dish name (TheMealDB id or "own suggestion") — *uses up:* items, with expiry
    - **Use soon (≤3 days)**: any priority item not used, with an idea
    - **Grocery list by aisle**: `Aisle: item, item`
+
+## Updating the pantry
+When the user says they **bought**, **used/cooked**, or **threw away** items (e.g. "I bought 6 eggs and spinach that expires Nov 22", "I used the tofu"):
+1. `read_file` the pantry JSON.
+2. Bought → add the item, or increase `qty` if the same item and unit exist. If no expiry is given, ask once; if the user doesn't know, estimate a typical shelf life and mark it `"expiry_estimated": true`.
+3. Used / threw away → decrease `qty`; remove the entry at 0.
+4. Write the whole updated JSON back with `write_file` (valid JSON array, same field names).
+5. Confirm in one line what changed, plus anything now expiring within 3 days.
 
 ## Pitfalls
 - Never invent a TheMealDB id; if a lookup fails, say "own suggestion".
