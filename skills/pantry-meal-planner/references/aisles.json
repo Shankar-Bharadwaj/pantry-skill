@@ -1,0 +1,11 @@
+{
+  "Produce": ["spinach", "lettuce", "tomato", "onion", "garlic", "pepper", "carrot", "potato", "lemon", "lime", "ginger", "cilantro", "parsley", "basil", "mushroom", "zucchini", "broccoli", "cucumber", "avocado", "apple", "banana", "chilli", "chili", "cabbage", "kale", "celery", "scallion", "spring onion"],
+  "Dairy & Eggs": ["milk", "cheese", "cheddar", "mozzarella", "parmesan", "feta", "butter", "yogurt", "yoghurt", "cream", "egg", "paneer"],
+  "Bakery": ["bread", "tortilla", "pita", "naan", "bun", "baguette"],
+  "Pasta, Rice & Grains": ["pasta", "spaghetti", "penne", "noodle", "rice", "quinoa", "couscous", "oat", "flour", "lasagne"],
+  "Canned & Jarred": ["chickpea", "bean", "lentil", "tomato puree", "passata", "coconut milk", "stock", "broth", "tomato paste"],
+  "Spices & Condiments": ["cumin", "paprika", "turmeric", "coriander", "oregano", "thyme", "soy sauce", "vinegar", "mustard", "curry", "garam masala", "cinnamon", "sugar", "honey"],
+  "Tofu & Plant Protein": ["tofu", "tempeh", "seitan"],
+  "Frozen": ["frozen", "peas", "corn"],
+  "Meat & Seafood": ["chicken", "beef", "pork", "lamb", "fish", "salmon", "tuna", "shrimp", "prawn", "bacon", "sausage"]
+}

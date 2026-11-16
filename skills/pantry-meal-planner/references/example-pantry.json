@@ -1,0 +1,12 @@
+[
+  {"item": "spinach", "qty": 1, "unit": "bag", "expiry": "2026-11-17"},
+  {"item": "tofu", "qty": 2, "unit": "block", "expiry": "2026-11-18"},
+  {"item": "milk", "qty": 1, "unit": "liter", "expiry": "2026-11-18"},
+  {"item": "bell pepper", "qty": 3, "unit": "pcs", "expiry": "2026-11-19"},
+  {"item": "eggs", "qty": 10, "unit": "pcs", "expiry": "2026-11-25"},
+  {"item": "chickpeas", "qty": 2, "unit": "can", "expiry": "2027-06-01"},
+  {"item": "rice", "qty": 2, "unit": "kg", "expiry": "2027-05-01"},
+  {"item": "pasta", "qty": 1, "unit": "kg", "expiry": "2027-03-01"},
+  {"item": "tomato", "qty": 4, "unit": "pcs", "expiry": "2026-11-20"},
+  {"item": "cheddar cheese", "qty": 200, "unit": "g", "expiry": "2026-11-28"}
+]
